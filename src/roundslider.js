@@ -268,7 +268,7 @@
             var input = this.input = this.$createElement("input.rs-input rs-tooltip-text").css({
                 height: tooltip.outerHeight() - border,
                 width: tooltip.outerWidth() - border
-            });
+            }).attr('oninput',"this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\\..*?)\\..*/g, '$1');");;
             this._setTooltipColor(input);
             tooltip.html(input).removeClass("rs-edit").addClass("rs-hover");
 
